@@ -1,3 +1,16 @@
+/*
+0-600ps:    Phone
+600-900:    Tablet portrait
+900-1200:   Tablet landscape
+1200-1800:  Normal styling applies (desktop first)
+1800+:      Big desktop
+
+$breakpoint argument choices:
+- phone 
+- tab-port
+- tab-land
+- big-desktop
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -37,6 +50,15 @@ html {
   font-size: 62.5%;
   /*browser default is 16px, we want font-size to be 10px as the reference for rem */
   /*defines what 1 rem is*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }

@@ -7,9 +7,29 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; // 1rem = 10px
     /*browser default is 16px, we want font-size to be 10px as the reference for rem */
     /*defines what 1 rem is*/
+
+    // MIND THE ORDER!!!!!
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1rem = 9px
+    }
+
+    //  WILL OVERWRITE SCREENS SIZED  LESS THAN 900 WHICH FELL UNDER TAB-LAND
+    @include respond(tab-port) {
+        font-size: 50%; // 1rem = 8px
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px
+    }
+
+    // REMOVING THIS BECAUSE TAB-PORT COVERS THE MOBILE SCREEN SIZE AS WELL
+    // @include respond(phone) {
+    //     font-size: 50%;
+    // }
 }
 
 body {
